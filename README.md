@@ -10,6 +10,8 @@ Then go to the package mode by pressing <kbd>]</kbd>, and activate the environme
 ```
 pkg> activate .
 pkg> add Gurobi
+pkg> CSV DataFrames
+pkg> add Graphs
 pkg> develop ./GenerationExpansionPlanning
 ```
 
