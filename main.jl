@@ -1,3 +1,5 @@
+# import Pkg; 
+# Pkg.add("GenerationExpansionPlanning")
 using GenerationExpansionPlanning
 using Gurobi
 
