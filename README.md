@@ -12,7 +12,13 @@ pkg> activate .
 pkg> add Gurobi
 pkg> add CSV DataFrames
 pkg> add Graphs
+pkg> add karnak, Plots, GraphRecipes, NetworkLayout, Colors
 pkg> develop ./GenerationExpansionPlanning
+```
+
+For Graph Construction, run below in Julia REPL
+```
+include("GraphConstruction.jl")
 ```
 
 Press <kbd>backspace</kbd> to return to Julia REPL.
