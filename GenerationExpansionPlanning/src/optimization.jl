@@ -81,16 +81,16 @@ function run_experiment(data::ExperimentData, optimizer_factory)::ExperimentResu
             production[n, g, t] ≤ get(generation_availability, (n, g, t), 1.0) * investment_MW[n, g]
         )
         
-        @info "Adding the ramping constraints"
-        ramping = @expression(model, [n ∈ N, g ∈ G, t ∈ T; t > 1 && (n, g) ∈ NG],
-            production[n, g, t] - production[n, g, t-1]
-        )
-        for (n, g, t) ∈ eachindex(ramping)
-            # Ramping up
-            @constraint(model, ramping[n, g, t] ≤ ramping_rate[n, g] * investment_MW[n, g])
-            # Ramping down
-            @constraint(model, ramping[n, g, t] ≥ -ramping_rate[n, g] * investment_MW[n, g])
-        end
+        # @info "Adding the ramping constraints"
+        # ramping = @expression(model, [n ∈ N, g ∈ G, t ∈ T; t > 1 && (n, g) ∈ NG],
+        #     production[n, g, t] - production[n, g, t-1]
+        # )
+        # for (n, g, t) ∈ eachindex(ramping)
+        #     # Ramping up
+        #     @constraint(model, ramping[n, g, t] ≤ ramping_rate[n, g] * investment_MW[n, g])
+        #     # Ramping down
+        #     @constraint(model, ramping[n, g, t] ≥ -ramping_rate[n, g] * investment_MW[n, g])
+        # end
 
         # 5. Solve the model
         @info "Solving the model"
