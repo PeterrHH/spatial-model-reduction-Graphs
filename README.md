@@ -1,29 +1,3 @@
-# How to Use
-
-In julia REPL, add the environment variable for your Gurobi installation
-
-```julia
-ENV["GUROBI_HOME"] = "PATH_TO_GUROBI"
-```
-
-Then go to the package mode by pressing <kbd>]</kbd>, and activate the environment in the current directory:
-```
-pkg> activate .
-pkg> add Gurobi
-pkg> add CSV DataFrames
-pkg> add Graphs
-pkg> add karnak, Plots, GraphRecipes, NetworkLayout, Colors
-pkg> develop ./GenerationExpansionPlanning
-```
-
-For Graph Construction, run below in Julia REPL
-```
-include("GraphConstruction.jl")
-```
-
-Press <kbd>backspace</kbd> to return to Julia REPL.
-
-You should be able to run `main.jl` or your own scripts using `GenerationExpansionPlanning` module now.
 
 # Mathematical formulation
 
